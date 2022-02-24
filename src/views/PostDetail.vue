@@ -37,7 +37,6 @@ export default {
     ...mapActions(["getAllComments"]),
   },
   mounted() {
-    console.log(this.post);
     this.getAllComments(this.$route.params.id);
   },
 };
