@@ -23,5 +23,13 @@ describe('Test Playwright Header presents', () => {
     expect(text).to.equal('Posts')
   })
 
-  it()
+  it('render list', async () => {
+    await page.click(".card");
+    await expect(page.url()).to.be.equal("http://localhost:8080/post/1");
+  })
+
+  it('post is present', async () => {
+    const post = await page.$(".post");
+    expect(post).to.exist;
+  })
 })
